@@ -1,0 +1,16 @@
+div.alert {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  h3 {
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+  }
+  i {
+    margin-right: 45px;
+    font-size: 2em;
+  }
+  button {
+    margin-left: 0.25em
+  }
+}
