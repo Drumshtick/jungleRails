@@ -2,13 +2,24 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @orders = LineItem.where(order_id: @order.id)
+    @ordered_items = []
+    @cntr = 0
+    @orders.each do |item|
+      @ordered_items.push({
+        product: Product.find(item.product_id),
+        })
+        item[:quantity] = item.quantity
+      @ordered_items[@cntr][:amount_sold] = @orders[@cntr][:quantity]
+      @cntr += 1
+    end
   end
-
+  
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
-
     if order.valid?
+      @ordered_items = enhanced_cart
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
