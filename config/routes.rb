@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     post   :add_item
     post   :remove_item
   end
+  # For displaying users signup for
   get '/signup' => 'users#new'
+  # For creating the actual db entry
   post '/users' => 'users#create'
   resources :orders, only: [:create, :show]
 
