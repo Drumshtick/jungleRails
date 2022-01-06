@@ -1,2 +1,27 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+<h2>Statistics</h2>
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="li-wrapper">
+      <%= link_to 'Total product count:', 'admin/products' %><div><span class="badge bg-primary rounded-pill"><%= @products_count %></span></div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="li-wrapper">
+      <p>Category count:</p><div><span class="badge bg-primary rounded-pill"><%= @categories_count %></span></div>
+    </div>
+  </li>
+  <li class="list-group-item">
+    <div class="li-wrapper">
+      <p class="cat-count-header">Products per Category</p><div><span style="visibility: hidden" class="badge bg-primary rounded-pill"><%= @categories_count %></span></div>
+    </div>
+  </li>
+  <% @items_per_category.each do | item | %>
+    <li class="list-group-item">
+    <div class="li-wrapper">
+      <p class="cat-count"><%= item[0] %>:</p><div><span class="sub-cat badge bg-primary rounded-pill"><%= item[1] %></span></div>
+    </div>
+  </li>
+<% end %>
+</ul>
+
