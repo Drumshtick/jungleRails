@@ -5,9 +5,12 @@
 
 // App
 @import "products";
-
+// Alert for empty cart styling
 @import "alert";
+// Admin dashboard styles
 @import "admin/admin_dashboard.scss";
+// About page
+@import "about";
 // Global
 body {
   padding-top: 70px;
