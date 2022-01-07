@@ -9,10 +9,20 @@ Rails.application.routes.draw do
     post   :add_item
     post   :remove_item
   end
-  # For displaying users signup for
+  # signup routes
+    # For displaying users signup for
   get '/signup' => 'users#new'
-  # For creating the actual db entry
+    # For creating the actual db entry
   post '/users' => 'users#create'
+
+  # Login routes
+    # login form
+  get '/login' => 'sessions#new'
+    # login action
+  post '/login' => 'sessions#create'
+    # logout action
+  get '/logout' => 'sessions#destroy'
+
   resources :orders, only: [:create, :show]
 
   namespace :admin do
