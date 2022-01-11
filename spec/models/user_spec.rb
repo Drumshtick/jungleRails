@@ -147,5 +147,15 @@ RSpec.describe User, type: :model do
         @prev_registerd_email, @prev_registered_password)
       expect(@user).to be_truthy
     end
+    it "returns an authenticated user with extra whitespace in email" do
+      @user = User.authenticate_with_credentials(
+        "    " + @prev_registerd_email + "  ", @prev_registered_password)
+      expect(@user).to be_truthy
+    end
+    it "returns an authenticated user when email has incorrect case" do
+      @user = User.authenticate_with_credentials(
+        "    " + @prev_registerd_email + "  ", @prev_registered_password)
+      expect(@user).to be_truthy
+    end
   end
 end
