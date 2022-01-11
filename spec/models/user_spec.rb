@@ -3,12 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @prev_registerd_email = "first@user.com"
+    @prev_registered_password = "password"
     @first_user = User.create(
       first_name: "Here",
       last_name: "First",
       email: @prev_registerd_email,
-      password: "password",
-      password_confirmation: "password"
+      password: @prev_registered_password,
+      password_confirmation: @prev_registered_password
     )
   end
 
@@ -138,5 +139,13 @@ RSpec.describe User, type: :model do
      )
      expect(User.all.count).to be(1)
    end
+  end
+
+  describe ".authenticate_with_credentials" do
+    it "returns an authenticated user" do
+      @user = User.authenticate_with_credentials(
+        @prev_registerd_email, @prev_registered_password)
+      expect(@user).to be_truthy
+    end
   end
 end
