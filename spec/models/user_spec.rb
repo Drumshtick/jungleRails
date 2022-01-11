@@ -147,6 +147,11 @@ RSpec.describe User, type: :model do
         @prev_registerd_email, @prev_registered_password)
       expect(@user).to be_truthy
     end
+    it "doesn't returns an authenticated user with bad credentials" do
+      @user = User.authenticate_with_credentials(
+        "bad@email.com", @prev_registered_password)
+      expect(@user).to be_falsy
+    end
     it "returns an authenticated user with extra whitespace in email" do
       @user = User.authenticate_with_credentials(
         "    " + @prev_registerd_email + "  ", @prev_registered_password)
