@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   def self.authenticate_with_credentials(email, password)
-    user = User.where(email: email.strip).first
+    user = User.where(email: email).first
     if user
       user.authenticate(password)
     else
