@@ -5,9 +5,20 @@ class OrderReciept < ApplicationMailer
   #
   #   en.order_reciept.thanks_for_shopping.subject
   #
-  def thanks_for_shopping
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  ActionMailer::Base.delivery_method = :file
+  def thanks_for_shopping(order)
+    @order = order
+    @orders = LineItem.where(order_id: @order.id)
+    @ordered_items = []
+    @cntr = 0
+    @orders.each do |item|
+      @ordered_items.push({
+        product: Product.find(item.product_id),
+        })
+        item[:quantity] = item.quantity
+      @ordered_items[@cntr][:amount_sold] = @orders[@cntr][:quantity]
+      @cntr += 1
+    end
+    mail to: "#{@order.email}", subject: "Order number: #{@order.id}"
   end
 end
