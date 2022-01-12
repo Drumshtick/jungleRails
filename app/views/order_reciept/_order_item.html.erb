@@ -1,0 +1,25 @@
+<tr>
+  <td style="  border: 1px solid #ddd;
+  padding: 8px;">
+    <%= image_tag product.image.tiny %>
+  </td>
+  <td style="  border: 1px solid #ddd;
+  padding: 8px;">
+    <h4><%= product.name %></h4>
+    <br>
+    <p><%= product.description %></p>
+  </td style="  border: 1px solid #ddd;
+  padding: 8px;">
+  <td style="  border: 1px solid #ddd;
+  padding: 8px;">
+    <%= humanized_money_with_symbol product.price %>
+  </td>
+  <td style="  border: 1px solid #ddd;
+  padding: 8px;">
+    <%= quantity %>
+  </td>
+  <td style="  border: 1px solid #ddd;
+  padding: 8px;">
+    <%= humanized_money_with_symbol product.price * quantity %>
+  </td>
+</tr>

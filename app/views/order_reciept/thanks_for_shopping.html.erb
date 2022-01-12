@@ -1,5 +1,37 @@
-<h1>OrderReciept#thanks_for_shopping</h1>
+<h1>Order Receipt From Jungle!</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/order_reciept/thanks_for_shopping.html.erb
-</p>
+  <table style="font-family: Arial, Helvetica, sans-serif; border-collapse: collapse;
+  width: 100%;  border: 1px solid #ddd;
+  padding: 8px;">
+    <thead>
+      <tr>
+        <th styke="  border: 1px solid #ddd;
+  padding: 8px; " colspan="2">Product</th>
+        <th style="  border: 1px solid #ddd;
+  padding: 8px;">Unit Price</th>
+        <th style="  border: 1px solid #ddd;
+  padding: 8px;">Quantity</th>
+        <th style="  border: 1px solid #ddd;
+  padding: 8px;">Price</th>
+      </tr>
+    </thead>
+  <tbody>
+    <% @ordered_items.each do |item| %>
+      <%= render 'order_item', product: item[:product], quantity: item[:amount_sold].to_i,
+                              image: item[:image], description: item[:description],
+                              price: item[:price], name: item[:name], total: @order.total_cents  %>
+    <% end %>
+  </tbody>
+    <tfoot>
+      <tr>
+        <th style="  border: 1px solid #ddd;
+  padding: 8px;" colspan="4">
+          TOTAL:
+        </th>
+        <th style="  border: 1px solid #ddd;
+  padding: 8px;">
+          <%= @order.total %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
