@@ -22,4 +22,14 @@ RSpec.feature "UserLogins", type: :feature, js: true do
     expect(page.has_content?("Login")).to be_falsy
     puts page.html
   end
+
+  scenario "user is directyed to products index page after login" do
+    visit 'login'
+
+    fill_in 'email', with: 'eatdem@cookies.com'
+    fill_in 'password', with: 'password'
+    click_on "Submit"
+    
+    expect(page).to have_css 'section.products-index'
+  end
 end
