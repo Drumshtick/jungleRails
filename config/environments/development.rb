@@ -22,7 +22,7 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
-  # Debug mode disables concatenation and preprocessing of assets.
+  # Debug mode disables concatenation and preprocessing of assets.config.action_mailer.delivery_method = :file
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
@@ -40,4 +40,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.web_console.whitelisted_ips = ['10.0.2.0/24']
+
+  # config.action_mailer.delivery_method = :file
 end
