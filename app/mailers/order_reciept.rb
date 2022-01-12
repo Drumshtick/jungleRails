@@ -5,7 +5,13 @@ class OrderReciept < ApplicationMailer
   #
   #   en.order_reciept.thanks_for_shopping.subject
   #
+
+  # THIS IS FOR TEST AND DEVELOPMENT ONLY
+    # REMOVE THIS LINE AFTER CHANGING TO PRODUCTION
+    # OTHERWISE EMAILS WILL ALWAYS BE SAVED TO TMP
   ActionMailer::Base.delivery_method = :file
+
+
   def thanks_for_shopping(order)
     @order = order
     @orders = LineItem.where(order_id: @order.id)
