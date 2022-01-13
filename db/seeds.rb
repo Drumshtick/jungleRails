@@ -257,8 +257,92 @@ Review.create!({
 
 Review.create!({
   product_id: 12,
+  user_id: 3,
+  rating: 5,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  rating: 2,
+  description: "Wood by moar"
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  rating: 4,
+  description: "Didn't taste too gud"
+})
+
+Review.create!({
+  product_id: 3,
   user_id: 4,
   rating: 3,
+  description: "Definitley make buy again Definitley make buy again Definitley make buy again Definitley make buy again"
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 2,
+  rating: 4,
+  description: "Definitely worth the purchase"
+})
+
+Review.create!({
+  product_id: 6,
+  user_id: 5,
+  rating: 2,
+  description: "I like it seems as good product for todays mrkt"
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 1,
+  rating: 3,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 8,
+  user_id: 1,
+  rating: 3,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 7,
+  user_id: 5,
+  rating: 5,
+  description: "I <heart> like it seems as good product"
+})
+
+Review.create!({
+  product_id: 10,
+  user_id: 2,
+  rating: 2,
+  description: "I like it seems as good buy moar plz"
+})
+
+Review.create!({
+  product_id: 9,
+  user_id: 1,
+  rating: 3,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  rating: 2,
+  description: "Bad me no like"
+})
+
+Review.create!({
+  product_id: 11,
+  user_id: 4,
+  rating: 4,
   description: "Wood by moar"
 })
 puts "DONE!"
