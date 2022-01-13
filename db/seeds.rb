@@ -133,4 +133,132 @@ cat3.products.create!({
 })
 
 
+puts "Re-creating Users ..."
+User.create!({
+  first_name: "Cookie",
+  last_name: "EATER",
+  email: "goodcookies123@mail.com",
+  password: "password",
+  password_confirmation: "password"
+})
+
+User.create!({
+  first_name: "Bert",
+  last_name: "NotErnie",
+  email: "sesame@mail.com",
+  password: "password",
+  password_confirmation: "password"
+})
+
+User.create!({
+  first_name: "Ernie",
+  last_name: "NotBurt",
+  email: "lucky@gail.com",
+  password: "password",
+  password_confirmation: "password"
+})
+
+User.create!({
+  first_name: "WOAH",
+  last_name: "Squares",
+  email: "square@circle.com",
+  password: "password",
+  password_confirmation: "password"
+})
+
+User.create!({
+  first_name: "Sporks",
+  last_name: "EA",
+  email: "compete@fail.com",
+  password: "password",
+  password_confirmation: "password"
+})
+
+puts "Re-creating Reviews ..."
+
+
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  rating: 5,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 3,
+  rating: 4,
+  description: "Didn't taste too gud"
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  rating: 1,
+  description: "Definitley make buy again"
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 4,
+  rating: 2,
+  description: "AMAZE must by"
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 5,
+  rating: 5,
+  description: "I like it seems as good product for todays mrkt"
+})
+
+Review.create!({
+  product_id: 6,
+  user_id: 1,
+  rating: 5,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 7,
+  user_id: 1,
+  rating: 5,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 8,
+  user_id: 5,
+  rating: 2,
+  description: "I <heart> like it seems as good product"
+})
+
+Review.create!({
+  product_id: 9,
+  user_id: 2,
+  rating: 5,
+  description: "I like it seems as good buy moar plz"
+})
+
+Review.create!({
+  product_id: 10,
+  user_id: 1,
+  rating: 5,
+  description: "I like it seems as good product"
+})
+
+Review.create!({
+  product_id: 11,
+  user_id: 3,
+  rating: 1,
+  description: "Bad me no like"
+})
+
+Review.create!({
+  product_id: 12,
+  user_id: 4,
+  rating: 3,
+  description: "Wood by moar"
+})
 puts "DONE!"
