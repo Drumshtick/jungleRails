@@ -1,5 +1,6 @@
 <section class="products-show">
-
+  <%= @users %>
+  <%= @reviews.inspect %>
   <header class="page-header">
     <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %></h1>
   </header>
@@ -27,5 +28,13 @@
     </div>
 
   </article>
-
+  <section>
+      <% @reviews.each do |item| %>
+      <%= render 'review',
+        rating: item[:rating],
+        username: @users[item[:user_id]][0],
+        description: item[:description]
+      %>
+    <% end %>
+  <section>
 </section>
